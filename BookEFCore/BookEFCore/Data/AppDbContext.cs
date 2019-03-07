@@ -20,6 +20,12 @@ namespace BookEFCore.Data
                 .HasOne(aurBook => aurBook.Book)
                 .WithMany(books => books.Books)
                 .HasForeignKey(b => b.BookIsbn);
+
+            modelBuilder.Entity<AuthorBooks>()
+                .HasOne(a => a.Author)
+                .WithMany(a => a.Authors)
+                .HasForeignKey(fk => new {fk.firstName_FK, fk.lastName_FK});
+            
         }
 
         public DbSet<Book> Books { get; set; }

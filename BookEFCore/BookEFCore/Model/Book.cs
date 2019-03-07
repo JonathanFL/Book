@@ -16,5 +16,6 @@ namespace BookEFCore.Model
         public string publishedOn { get; set; }
         public string imgURL { get; set; }
         public List<AuthorBooks> Books { get; set; }
+        public List<Review> ReviewsList { get; set; }
     }
 }
